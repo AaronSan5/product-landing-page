@@ -143,3 +143,40 @@ He diseñado la estructura HTML de la landing page priorizando la semántica cor
 - **Mantenibilidad**: Código organizado y fácil de entender.
 - **Compatibilidad futura**: Basado en HTML5 y buenas prácticas.
 - **Consistencia**: Jerarquía de encabezados clara (h1 > h2 > h3).
+
+
+
+
+#Laboratorio 02: 
+## HU1: Navegación Flexible
+
+- Se implementó `display: flex` en el menú principal con `justify-content: space-between` para distribuir los elementos.
+- Se añadió `flex-wrap: wrap` para que el menú se ajuste correctamente en pantallas pequeñas.
+- Uso de **media queries** para cambiar la dirección del layout a columna (`flex-direction: column`) en pantallas pequeñas.
+
+---
+
+## HU2: Secciones Adaptables
+
+- Todas las secciones principales ahora utilizan `display: flex` con `flex-direction: column`.
+- Se aplicó `align-items: center` para centrar el contenido horizontalmente.
+- Se agregó `flex-wrap: wrap` a los contenedores internos para mejorar la adaptabilidad.
+
+---
+
+## HU3: Galería de Imágenes del Producto
+
+- Se creó una nueva sección: `<section id="galeria">` con una galería de imágenes del producto.
+- Implementación de `display: flex` y `flex-wrap: wrap` para distribuir las imágenes eficientemente.
+- Configuración de **media queries** para mostrar:
+  - 3–4 columnas en pantallas grandes
+  - 2 columnas en pantallas medianas
+  - 1 columna en pantallas pequeñas
+
+---
+
+## Requerimientos Técnicos Adicionales
+
+- Aplicación de `display: flex` a los contenedores principales: `body`, `header`, `main` y `footer`.
+- Control de `overflow` para las imágenes y elementos dentro de la galería, asegurando una visualización adecuada.
+
