@@ -4,111 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VisionTranslate - Comprar Lentes con IA para Traducción</title>
-    <link rel="stylesheet" href="css/style3.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#4169e1',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header role="banner">
-        <div class="header-container">
-            <nav class="main-nav" aria-label="Navegación principal">
-                <a href="index.html" class="logo">VisionTranslate</a>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#caracteristicas">Características</a></li>
-                    <li><a href="#galeria">Galería</a></li>
-                    <li><a href="testimonios.html">Testimonios</a></li>
-                    <li><a href="compra.html">Comprar</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+<body class="bg-black text-white font-sans min-h-screen grid grid-rows-[auto_1fr_auto]">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-black/85 backdrop-blur">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <nav class="flex flex-wrap items-center justify-between">
+                <a href="index.html" class="text-2xl font-semibold">VisionTranslate</a>
+                <ul class="flex flex-wrap gap-8">
+                    <li><a href="index.html" class="hover:opacity-80 transition-opacity">Inicio</a></li>
+                    <li><a href="index.html#caracteristicas" class="hover:opacity-80 transition-opacity">Características</a></li>
+                    <li><a href="index.html#galeria" class="hover:opacity-80 transition-opacity">Galería</a></li>
+                    <li><a href="testimonios.html" class="hover:opacity-80 transition-opacity">Testimonios</a></li>
+                    <li><a href="compra.html" class="hover:opacity-80 transition-opacity">Comprar</a></li>
+                    <li><a href="index.html#contacto" class="hover:opacity-80 transition-opacity">Contacto</a></li>
                 </ul>
-                <aside class="user-controls">
-                    <a href="#search" aria-label="Buscar"><span class="icon-search">🔍</span></a>
-                    <a href="#cart" aria-label="Carrito"><span class="icon-cart">🛒</span></a>
-                </aside>
+                <div class="flex gap-5">
+                    <a href="#search" aria-label="Buscar" class="hover:opacity-80 transition-opacity">🔍</a>
+                    <a href="#cart" aria-label="Carrito" class="hover:opacity-80 transition-opacity">🛒</a>
+                </div>
             </nav>
         </div>
     </header>
 
-    <div class="content-wrapper">
-        <aside role="complementary" aria-labelledby="pasos-compra">
-            <h2 id="pasos-compra">Pasos de compra</h2>
-            <nav class="purchase-steps" aria-label="Navegación de compra">
-                <div class="step active">1. Seleccionar modelo</div>
-                <div class="step">2. Personalización</div>
-                <div class="step">3. Opciones de envío</div>
-                <div class="step">4. Método de pago</div>
-                <div class="step">5. Confirmar pedido</div>
+    <!-- Main Content with Grid -->
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-[250px_1fr] gap-8">
+        <!-- Sidebar -->
+        <aside class="bg-white/5 rounded-lg p-8 h-fit sticky top-24">
+            <h2 class="text-2xl font-semibold mb-8" id="pasos-compra">Pasos de compra</h2>
+            <nav class="flex flex-col gap-4" aria-label="Navegación de compra">
+                <div class="p-4 bg-accent rounded-lg cursor-pointer transition-colors">1. Seleccionar modelo</div>
+                <div class="p-4 bg-black/30 rounded-lg cursor-pointer transition-colors hover:bg-accent/30">2. Personalización</div>
+                <div class="p-4 bg-black/30 rounded-lg cursor-pointer transition-colors hover:bg-accent/30">3. Opciones de envío</div>
+                <div class="p-4 bg-black/30 rounded-lg cursor-pointer transition-colors hover:bg-accent/30">4. Método de pago</div>
+                <div class="p-4 bg-black/30 rounded-lg cursor-pointer transition-colors hover:bg-accent/30">5. Confirmar pedido</div>
             </nav>
             
-            <div class="order-summary" aria-labelledby="resumen-pedido">
-                <h3 id="resumen-pedido">Resumen del pedido</h3>
+            <div class="mt-8" aria-labelledby="resumen-pedido">
+                <h3 class="text-xl font-semibold mb-4" id="resumen-pedido">Resumen del pedido</h3>
                 <p>Subtotal: $299.99</p>
                 <p>Envío: Calculado en el siguiente paso</p>
                 <p>Impuestos: Calculados al finalizar</p>
-                <hr>
+                <hr class="my-2 border-white/10">
                 <p><strong>Total estimado: $299.99</strong></p>
             </div>
         </aside>
 
-        <main role="main">
-            <h1>Comprar VisionTranslate</h1>
+        <!-- Main Content -->
+        <main class="py-8">
+            <h1 class="text-4xl font-semibold mb-2">Comprar VisionTranslate</h1>
             
-            <section class="product-summary" aria-labelledby="product-title">
-                <figure class="product-image">
-                    <img src="img/colores.webp" alt="Lentes VisionTranslate con tecnología de traducción en tiempo real">
+            <section class="grid lg:grid-cols-2 gap-8 mb-16" aria-labelledby="product-title">
+                <figure class="h-[400px] bg-white/5 rounded-lg overflow-hidden">
+                    <img src="img/colores.webp" alt="Lentes VisionTranslate con tecnología de traducción en tiempo real" class="w-full h-full object-cover">
                 </figure>
                 
-                <article class="product-details">
-                    <h2 id="product-title">VisionTranslate Pro</h2>
-                    <p class="price">$299.99</p>
+                <article>
+                    <h2 class="text-3xl font-semibold mb-8" id="product-title">VisionTranslate Pro</h2>
+                    <p class="text-3xl text-accent my-4">$299.99</p>
                     <p>Disfruta de traducción en tiempo real con nuestros innovadores lentes equipados con inteligencia artificial avanzada. Compatible con más de 40 idiomas y hasta 12 horas de batería.</p>
                     
-                    <div class="options-section">
-                        <h3>Selecciona el color</h3>
-                        <div class="options-grid">
-                            <div class="option selected">Negro</div>
-                            <div class="option">Plateado</div>
-                            <div class="option">Azul</div>
-                            <div class="option">Rojo</div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Selecciona el color</h3>
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="p-2 text-center bg-accent rounded cursor-pointer transition-colors">Negro</div>
+                            <div class="p-2 text-center bg-white/5 rounded cursor-pointer transition-colors hover:bg-accent/30">Plateado</div>
+                            <div class="p-2 text-center bg-white/5 rounded cursor-pointer transition-colors hover:bg-accent/30">Azul</div>
+                            <div class="p-2 text-center bg-white/5 rounded cursor-pointer transition-colors hover:bg-accent/30">Rojo</div>
                         </div>
                     </div>
                     
-                    <div class="options-section">
-                        <h3>Opciones de lentes</h3>
-                        <div class="options-grid">
-                            <div class="option selected">Estándar</div>
-                            <div class="option">Foto-cromáticos</div>
-                            <div class="option">Anti-reflejo</div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Opciones de lentes</h3>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="p-2 text-center bg-accent rounded cursor-pointer transition-colors">Estándar</div>
+                            <div class="p-2 text-center bg-white/5 rounded cursor-pointer transition-colors hover:bg-accent/30">Foto-cromáticos</div>
+                            <div class="p-2 text-center bg-white/5 rounded cursor-pointer transition-colors hover:bg-accent/30">Anti-reflejo</div>
                         </div>
                     </div>
                     
-                    <div class="options-section">
-                        <h3>Cantidad</h3>
-                        <div class="options-grid">
-                            <div class="option selected">1</div>
-                            <div class="option">2</div>
-                            <div class="option">3</div>
-                            <div class="option">4</div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Cantidad</h3>
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="p-2 text-center bg-accent rounded cursor-pointer transition-colors">1</div>
+                            <div class="p-2 text-center bg-white/5 rounded cursor-pointer transition-colors hover:bg-accent/30">2</div>
+                            <div class="p-2 text-center bg-white/5 rounded cursor-pointer transition-colors hover:bg-accent/30">3</div>
+                            <div class="p-2 text-center bg-white/5 rounded cursor-pointer transition-colors hover:bg-accent/30">4</div>
                         </div>
                     </div>
                     
-                    <button class="btn btn-primary checkout-btn">Añadir al carrito</button>
+                    <button class="w-full py-4 px-6 bg-accent text-white text-xl font-medium rounded-full cursor-pointer mt-8">Añadir al carrito</button>
                 </article>
             </section>
             
-            <section class="purchase-info" aria-labelledby="info-adicional">
-                <h2 id="info-adicional" class="visually-hidden">Información adicional</h2>
+            <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" aria-labelledby="info-adicional">
+                <h2 id="info-adicional" class="sr-only">Información adicional</h2>
                 
-                <article class="info-box">
-                    <h3>Garantía</h3>
+                <article class="bg-white/5 p-8 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Garantía</h3>
                     <p>Todos nuestros productos incluyen garantía de 2 años por defectos de fabricación. Además, ofrecemos 30 días de prueba con devolución sin preguntas.</p>
                 </article>
                 
-                <article class="info-box">
-                    <h3>Servicio técnico</h3>
+                <article class="bg-white/5 p-8 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Servicio técnico</h3>
                     <p>Disponemos de servicio técnico en más de 30 países. Las actualizaciones de software son gratuitas durante toda la vida útil del producto.</p>
                 </article>
                 
-                <article class="info-box">
-                    <h3>Accesorios incluidos</h3>
+                <article class="bg-white/5 p-8 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Accesorios incluidos</h3>
                     <ul>
                         <li>Estuche protector</li>
                         <li>Cable de carga USB-C</li>
@@ -120,35 +135,36 @@
         </main>
     </div>
 
-    <footer id="contacto" role="contentinfo">
-        <div class="footer-container">
-            <section class="footer-sections">
-                <article class="contact-info">
-                    <h3>Contacto</h3>
-                    <address>
-                        <p>Email: <a href="mailto:soporte@visiontranslate.com">soporte@visiontranslate.com</a></p>
-                        <p>Teléfono: <a href="tel:+18005551234">+1 (800) 555-1234</a></p>
+    <!-- Footer -->
+    <footer class="bg-black/80 pt-16 pb-4 mt-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap justify-between gap-8">
+                <article class="flex-1 min-w-[250px]">
+                    <h3 class="text-xl font-semibold mb-4">Contacto</h3>
+                    <address class="not-italic">
+                        <p>Email: <a href="mailto:soporte@visiontranslate.com" class="hover:opacity-80 transition-opacity">soporte@visiontranslate.com</a></p>
+                        <p>Teléfono: <a href="tel:+18005551234" class="hover:opacity-80 transition-opacity">+1 (800) 555-1234</a></p>
                         <p>Horario: Lunes-Viernes 9:00-18:00</p>
                     </address>
                 </article>
-                <nav class="footer-links" aria-label="Enlaces importantes">
-                    <h3>Enlaces</h3>
+                <nav class="flex-1 min-w-[250px]" aria-label="Enlaces importantes">
+                    <h3 class="text-xl font-semibold mb-4">Enlaces</h3>
                     <ul>
-                        <li><a href="#">Términos y condiciones</a></li>
-                        <li><a href="#">Política de privacidad</a></li>
-                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li class="mb-2"><a href="#" class="hover:opacity-80 transition-opacity">Términos y condiciones</a></li>
+                        <li class="mb-2"><a href="#" class="hover:opacity-80 transition-opacity">Política de privacidad</a></li>
+                        <li class="mb-2"><a href="#" class="hover:opacity-80 transition-opacity">Preguntas frecuentes</a></li>
                     </ul>
                 </nav>
-                <aside class="social-section">
-                    <h3>Redes sociales</h3>
-                    <nav class="social-links" aria-label="Redes sociales">
-                        <a href="#" aria-label="Facebook">FB</a>
-                        <a href="#" aria-label="Instagram">IG</a>
-                        <a href="#" aria-label="Twitter">TW</a>
+                <aside class="flex-1 min-w-[250px]">
+                    <h3 class="text-xl font-semibold mb-4">Redes sociales</h3>
+                    <nav class="flex gap-4" aria-label="Redes sociales">
+                        <a href="#" aria-label="Facebook" class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full hover:opacity-80 transition-opacity">FB</a>
+                        <a href="#" aria-label="Instagram" class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full hover:opacity-80 transition-opacity">IG</a>
+                        <a href="#" aria-label="Twitter" class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full hover:opacity-80 transition-opacity">TW</a>
                     </nav>
                 </aside>
-            </section>
-            <small class="copyright">© 2025 VisionTranslate. Todos los derechos reservados.</small>
+            </div>
+            <p class="text-center border-t border-white/10 pt-4 mt-8 text-sm">© 2025 VisionTranslate. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>

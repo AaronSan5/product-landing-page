@@ -4,207 +4,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonios - VisionTranslate</title>
-    <link rel="stylesheet" href="css/style2.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#4169e1',
+                        gold: '#ffd700'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="grid-container">
-        <header role="banner">
-            <nav class="main-nav" aria-label="Navegación principal">
-                <a href="index.html" class="logo">VisionTranslate</a>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#caracteristicas">Características</a></li>
-                    <li><a href="#galeria">Galería</a></li>
-                    <li><a href="testimonios.html">Testimonios</a></li>
-                    <li><a href="compra.html">Comprar</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                
+<body class="bg-black text-white font-sans min-h-screen">
+    <div class="grid grid-cols-1 md:grid-cols-[250px_1fr] grid-rows-[auto_1fr_auto] min-h-screen">
+        <!-- Header -->
+        <header class="col-span-full sticky top-0 z-50 bg-black/85 backdrop-blur">
+            <nav class="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-4 py-4 gap-4">
+                <a href="index.html" class="text-2xl font-semibold">VisionTranslate</a>
+                <ul class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <li><a href="index.html" class="hover:opacity-80 transition-opacity">Inicio</a></li>
+                    <li><a href="#caracteristicas" class="hover:opacity-80 transition-opacity">Características</a></li>
+                    <li><a href="#galeria" class="hover:opacity-80 transition-opacity">Galería</a></li>
+                    <li><a href="testimonios.html" class="hover:opacity-80 transition-opacity">Testimonios</a></li>
+                    <li><a href="compra.html" class="hover:opacity-80 transition-opacity">Comprar</a></li>
+                    <li><a href="#contacto" class="hover:opacity-80 transition-opacity">Contacto</a></li>
                 </ul>
-                <aside class="user-controls">
-                    <a href="#search" aria-label="Buscar"><span class="icon-search">🔍</span></a>
-                    <a href="#cart" aria-label="Carrito"><span class="icon-cart">🛒</span></a>
-                </aside>
+                <div class="flex gap-5">
+                    <a href="#search" aria-label="Buscar" class="hover:opacity-80 transition-opacity">🔍</a>
+                    <a href="#cart" aria-label="Carrito" class="hover:opacity-80 transition-opacity">🛒</a>
+                </div>
             </nav>
         </header>
 
-        <aside role="complementary" aria-labelledby="filtros-heading">
-            <h2 id="filtros-heading">Filtros</h2>
+        <!-- Sidebar -->
+        <aside class="bg-white/5 p-8 md:border-r border-white/10" role="complementary" aria-labelledby="filtros-heading">
+            <h2 id="filtros-heading" class="text-2xl font-semibold mb-8">Filtros</h2>
             
-            <div class="filter-sections">
-                <section class="filter-section">
-                    <h3>Calificación</h3>
-                    <div class="filter-options">
-                        <label>
-                            <input type="checkbox" name="rating" value="5"> 5 estrellas
+            <div class="md:block flex flex-wrap gap-8">
+                <section class="mb-8 flex-1 min-w-[200px]">
+                    <h3 class="text-xl font-semibold mb-4">Calificación</h3>
+                    <div class="flex flex-col gap-2">
+                        <label class="block">
+                            <input type="checkbox" name="rating" value="5" class="mr-2"> 5 estrellas
                         </label>
-                        <label>
-                            <input type="checkbox" name="rating" value="4"> 4 estrellas
+                        <label class="block">
+                            <input type="checkbox" name="rating" value="4" class="mr-2"> 4 estrellas
                         </label>
-                        <label>
-                            <input type="checkbox" name="rating" value="3"> 3 estrellas
+                        <label class="block">
+                            <input type="checkbox" name="rating" value="3" class="mr-2"> 3 estrellas
                         </label>
-                        <label>
-                            <input type="checkbox" name="rating" value="2"> 2 estrellas
+                        <label class="block">
+                            <input type="checkbox" name="rating" value="2" class="mr-2"> 2 estrellas
                         </label>
-                        <label>
-                            <input type="checkbox" name="rating" value="1"> 1 estrella
-                        </label>
-                    </div>
-                </section>
-                
-                <section class="filter-section">
-                    <h3>Características</h3>
-                    <div class="filter-options">
-                        <label>
-                            <input type="checkbox" name="feature" value="traduccion"> Traducción
-                        </label>
-                        <label>
-                            <input type="checkbox" name="feature" value="bateria"> Batería
-                        </label>
-                        <label>
-                            <input type="checkbox" name="feature" value="diseno"> Diseño
-                        </label>
-                        <label>
-                            <input type="checkbox" name="feature" value="comodidad"> Comodidad
+                        <label class="block">
+                            <input type="checkbox" name="rating" value="1" class="mr-2"> 1 estrella
                         </label>
                     </div>
                 </section>
                 
-                <section class="filter-section">
-                    <h3>Fecha</h3>
-                    <div class="filter-options">
-                        <label>
-                            <input type="checkbox" name="date" value="recent"> Más recientes
+                <section class="mb-8 flex-1 min-w-[200px]">
+                    <h3 class="text-xl font-semibold mb-4">Características</h3>
+                    <div class="flex flex-col gap-2">
+                        <label class="block">
+                            <input type="checkbox" name="feature" value="traduccion" class="mr-2"> Traducción
                         </label>
-                        <label>
-                            <input type="checkbox" name="date" value="month"> Último mes
+                        <label class="block">
+                            <input type="checkbox" name="feature" value="bateria" class="mr-2"> Batería
                         </label>
-                        <label>
-                            <input type="checkbox" name="date" value="year"> Último año
+                        <label class="block">
+                            <input type="checkbox" name="feature" value="diseno" class="mr-2"> Diseño
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" name="feature" value="comodidad" class="mr-2"> Comodidad
+                        </label>
+                    </div>
+                </section>
+                
+                <section class="mb-8 flex-1 min-w-[200px]">
+                    <h3 class="text-xl font-semibold mb-4">Fecha</h3>
+                    <div class="flex flex-col gap-2">
+                        <label class="block">
+                            <input type="checkbox" name="date" value="recent" class="mr-2"> Más recientes
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" name="date" value="month" class="mr-2"> Último mes
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" name="date" value="year" class="mr-2"> Último año
                         </label>
                     </div>
                 </section>
             </div>
         </aside>
 
-        <main role="main">
-            <h1 class="page-title">Testimonios de nuestros clientes</h1>
+        <!-- Main Content -->
+        <main class="p-8" role="main">
+            <h1 class="text-4xl font-semibold mb-8">Testimonios de nuestros clientes</h1>
             
-            <section class="testimonials-grid">
-                <article class="testimonial-card">
-                    <header class="testimonial-header">
-                        <div class="testimonial-avatar">MC</div>
-                        <div class="testimonial-info">
-                            <h3>Miguel Castro</h3>
-                            <span class="testimonial-date">24 de febrero, 2025</span>
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white/5 rounded-lg p-8 transition-transform hover:translate-y-[-5px]">
+                    <header class="flex items-center mb-4">
+                        <div class="w-[50px] h-[50px] rounded-full mr-4 bg-accent flex items-center justify-center font-bold">
+                            MC
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold m-0">Miguel Castro</h3>
+                            <span class="text-sm text-white/80">24 de febrero, 2025</span>
                         </div>
                     </header>
-                    <div class="testimonial-rating">★★★★★</div>
-                    <div class="testimonial-content">
+                    <div class="my-4 text-gold">★★★★★</div>
+                    <div class="mt-4">
                         <p>Los lentes VisionTranslate han cambiado completamente mi experiencia al viajar. Puedo leer menús, señales y documentos en cualquier idioma sin problemas. La batería dura todo el día y son muy cómodos para uso prolongado.</p>
                     </div>
                 </article>
                 
-                <article class="testimonial-card">
-                    <header class="testimonial-header">
-                        <div class="testimonial-avatar">AL</div>
-                        <div class="testimonial-info">
-                            <h3>Ana López</h3>
-                            <span class="testimonial-date">15 de febrero, 2025</span>
+                <article class="bg-white/5 rounded-lg p-8 transition-transform hover:translate-y-[-5px]">
+                    <header class="flex items-center mb-4">
+                        <div class="w-[50px] h-[50px] rounded-full mr-4 bg-accent flex items-center justify-center font-bold">
+                            AL
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold m-0">Ana López</h3>
+                            <span class="text-sm text-white/80">15 de febrero, 2025</span>
                         </div>
                     </header>
-                    <div class="testimonial-rating">★★★★☆</div>
-                    <div class="testimonial-content">
+                    <div class="my-4 text-gold">★★★★☆</div>
+                    <div class="mt-4">
                         <p>Uso estos lentes para mis clases de idiomas y son increíblemente útiles. La traducción es muy precisa y la calidad de los lentes es excelente. Le quito una estrella porque a veces tarda en detectar texto muy pequeño.</p>
                     </div>
                 </article>
                 
-                <article class="testimonial-card">
-                    <header class="testimonial-header">
-                        <div class="testimonial-avatar">JP</div>
-                        <div class="testimonial-info">
-                            <h3>Javier Pérez</h3>
-                            <span class="testimonial-date">3 de marzo, 2025</span>
+                <article class="bg-white/5 rounded-lg p-8 transition-transform hover:translate-y-[-5px]">
+                    <header class="flex items-center mb-4">
+                        <div class="w-[50px] h-[50px] rounded-full mr-4 bg-accent flex items-center justify-center font-bold">
+                            JP
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold m-0">Javier Pérez</h3>
+                            <span class="text-sm text-white/80">3 de marzo, 2025</span>
                         </div>
                     </header>
-                    <div class="testimonial-rating">★★★★★</div>
-                    <div class="testimonial-content">
+                    <div class="my-4 text-gold">★★★★★</div>
+                    <div class="mt-4">
                         <p>Como profesor de idiomas, estos lentes son una herramienta increíble para mis estudiantes. La traducción es muy natural, casi como si estuvieras leyendo en tu idioma nativo. El diseño es elegante y discreto.</p>
                     </div>
                 </article>
                 
-                <article class="testimonial-card">
-                    <header class="testimonial-header">
-                        <div class="testimonial-avatar">SR</div>
-                        <div class="testimonial-info">
-                            <h3>Sofía Ramírez</h3>
-                            <span class="testimonial-date">18 de febrero, 2025</span>
+                <article class="bg-white/5 rounded-lg p-8 transition-transform hover:translate-y-[-5px]">
+                    <header class="flex items-center mb-4">
+                        <div class="w-[50px] h-[50px] rounded-full mr-4 bg-accent flex items-center justify-center font-bold">
+                            SR
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold m-0">Sofía Ramírez</h3>
+                            <span class="text-sm text-white/80">18 de febrero, 2025</span>
                         </div>
                     </header>
-                    <div class="testimonial-rating">★★★☆☆</div>
-                    <div class="testimonial-content">
+                    <div class="my-4 text-gold">★★★☆☆</div>
+                    <div class="mt-4">
                         <p>La idea es genial y funcionan bien para textos básicos, pero tienen dificultades con textos muy técnicos o especializados. La batería dura lo prometido y el diseño es bonito, pero esperaba una mayor precisión en traducciones complejas.</p>
                     </div>
                 </article>
                 
-                <article class="testimonial-card">
-                    <header class="testimonial-header">
-                        <div class="testimonial-avatar">DT</div>
-                        <div class="testimonial-info">
-                            <h3>David Torres</h3>
-                            <span class="testimonial-date">5 de marzo, 2025</span>
+                <article class="bg-white/5 rounded-lg p-8 transition-transform hover:translate-y-[-5px]">
+                    <header class="flex items-center mb-4">
+                        <div class="w-[50px] h-[50px] rounded-full mr-4 bg-accent flex items-center justify-center font-bold">
+                            DT
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold m-0">David Torres</h3>
+                            <span class="text-sm text-white/80">5 de marzo, 2025</span>
                         </div>
                     </header>
-                    <div class="testimonial-rating">★★★★★</div>
-                    <div class="testimonial-content">
+                    <div class="my-4 text-gold">★★★★★</div>
+                    <div class="mt-4">
                         <p>¡Extraordinarios! Los uso para mis viajes de negocios internacionales y me han ahorrado muchos dolores de cabeza. La integración con la app móvil es perfecta y las actualizaciones de idiomas son frecuentes. 100% recomendados.</p>
                     </div>
                 </article>
                 
-                <article class="testimonial-card">
-                    <header class="testimonial-header">
-                        <div class="testimonial-avatar">LM</div>
-                        <div class="testimonial-info">
-                            <h3>Lucía Mendoza</h3>
-                            <span class="testimonial-date">27 de febrero, 2025</span>
+                <article class="bg-white/5 rounded-lg p-8 transition-transform hover:translate-y-[-5px]">
+                    <header class="flex items-center mb-4">
+                        <div class="w-[50px] h-[50px] rounded-full mr-4 bg-accent flex items-center justify-center font-bold">
+                            LM
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold m-0">Lucía Mendoza</h3>
+                            <span class="text-sm text-white/80">27 de febrero, 2025</span>
                         </div>
                     </header>
-                    <div class="testimonial-rating">★★★★☆</div>
-                    <div class="testimonial-content">
+                    <div class="my-4 text-gold">★★★★☆</div>
+                    <div class="mt-4">
                         <p>Me encanta cómo se ven y funcionan estos lentes. Son ligeros y cómodos para uso diario. La traducción de idiomas asiáticos es particularmente impresionante, aunque a veces tiene dificultades con caligrafía manual.</p>
                     </div>
                 </article>
             </section>
         </main>
 
-        <footer role="contentinfo">
-            <div class="footer-sections">
-                <article class="contact-info">
-                    <h3>Contacto</h3>
-                    <address>
-                        <p>Email: <a href="mailto:soporte@visiontranslate.com">soporte@visiontranslate.com</a></p>
-                        <p>Teléfono: <a href="tel:+18005551234">+1 (800) 555-1234</a></p>
+        <!-- Footer -->
+        <footer class="col-span-full bg-black/80 py-8" role="contentinfo">
+            <div class="flex flex-wrap justify-between gap-8 max-w-7xl mx-auto px-4">
+                <article class="flex-1 min-w-[200px]">
+                    <h3 class="text-xl font-semibold mb-4">Contacto</h3>
+                    <address class="not-italic">
+                        <p>Email: <a href="mailto:soporte@visiontranslate.com" class="hover:opacity-80 transition-opacity">soporte@visiontranslate.com</a></p>
+                        <p>Teléfono: <a href="tel:+18005551234" class="hover:opacity-80 transition-opacity">+1 (800) 555-1234</a></p>
                         <p>Horario: Lunes-Viernes 9:00-18:00</p>
                     </address>
                 </article>
-                <nav class="footer-links" aria-label="Enlaces importantes">
-                    <h3>Enlaces</h3>
+                <nav class="flex-1 min-w-[200px]" aria-label="Enlaces importantes">
+                    <h3 class="text-xl font-semibold mb-4">Enlaces</h3>
                     <ul>
-                        <li><a href="#">Términos y condiciones</a></li>
-                        <li><a href="#">Política de privacidad</a></li>
-                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li class="mb-2"><a href="#" class="hover:opacity-80 transition-opacity">Términos y condiciones</a></li>
+                        <li class="mb-2"><a href="#" class="hover:opacity-80 transition-opacity">Política de privacidad</a></li>
+                        <li class="mb-2"><a href="#" class="hover:opacity-80 transition-opacity">Preguntas frecuentes</a></li>
                     </ul>
                 </nav>
-                <aside class="social-section">
-                    <h3>Redes sociales</h3>
-                    <nav class="social-links" aria-label="Redes sociales">
-                        <a href="#" aria-label="Facebook">FB</a>
-                        <a href="#" aria-label="Instagram">IG</a>
-                        <a href="#" aria-label="Twitter">TW</a>
+                <aside class="flex-1 min-w-[200px]">
+                    <h3 class="text-xl font-semibold mb-4">Redes sociales</h3>
+                    <nav class="flex gap-4 mt-4" aria-label="Redes sociales">
+                        <a href="#" aria-label="Facebook" class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full hover:opacity-80 transition-opacity">FB</a>
+                        <a href="#" aria-label="Instagram" class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full hover:opacity-80 transition-opacity">IG</a>
+                        <a href="#" aria-label="Twitter" class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full hover:opacity-80 transition-opacity">TW</a>
                     </nav>
                 </aside>
             </div>
-            <small class="copyright">© 2025 VisionTranslate. Todos los derechos reservados.</small>
+            <p class="text-center border-t border-white/10 pt-4 mt-8 max-w-7xl mx-auto px-4">© 2025 VisionTranslate. Todos los derechos reservados.</p>
         </footer>
     </div>
 </body>
